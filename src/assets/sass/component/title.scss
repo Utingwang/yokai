@@ -1,0 +1,26 @@
+@import "@/assets/sass/base/color.scss";
+
+.title{
+    padding: 30px;
+    width: 300px;
+    margin: auto;
+    text-align: center;
+
+    h2::first-letter{
+        font-size: 58px;
+        color: $mred;
+    }
+}
+.title::after{
+    border: 1px solid #ff0;
+    content: "";
+    display: inline-block;
+    width: 200px;
+    height: 10px;
+    margin: 10px auto 0;
+    background-color: $mred;
+}
+h3{
+    margin:10px auto;
+
+}

@@ -1,0 +1,11 @@
+$color:(
+    "mred":#AD1800,
+);
+@each $k,$v in $color{
+    .#{$k}{
+        color:$v;
+    }
+}
+$mred:#AD1800;
+
+

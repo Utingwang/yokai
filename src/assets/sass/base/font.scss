@@ -1,0 +1,24 @@
+//sass map
+$fontSizes:(
+    "h1":px,
+    "h2":45px,
+    "h3":22px,
+    "h4":16px,
+);
+$fontWeight:(
+    "h2":400,
+    "h3":400,
+    "h4":600,
+);
+
+@each $k,$v in $fontSizes{
+    #{$k}{
+        font-size: $v;
+    }
+}
+@each $a,$b in $fontWeight{
+    #{$a}{
+        font-weight: $b;
+    }
+}
+
