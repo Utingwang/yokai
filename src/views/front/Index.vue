@@ -1,4 +1,4 @@
-<template>
+npm <template>
   <main>
     <h1>我叫做首頁</h1>
     <router-link to= "/Home/Shop">

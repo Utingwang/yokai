@@ -17,7 +17,7 @@
           <h4>{{ shop.title }}</h4>
         </div>
         <div>
-          <p>{{ shop.content }}</p>
+          <p :id="'shop-none-p-' + shopIndex">{{ shop.content }}</p>
         </div>
       </div>
     </div>
@@ -52,11 +52,46 @@ export default {
       ],
     };
   },
-  mounted() {},
-  components: {},
-  methods: {},
+  computed: {
+    truncatedContent() {
+      return (index) => {
+        const maxHeight = 45; // 设置最大高度
+        const noneElement = document.getElementById(`shop-none-p-${index}`);
+        if (noneElement) {
+          const text = noneElement.textContent;
+          if (noneElement.scrollHeight > maxHeight) {
+            // 文本内容超过最大高度，截断并添加省略号
+            return text.slice(0, -3) + '...';
+          } else {
+            // 文本内容未超过最大高度
+            return text;
+          }
+        }
+      };
+    },
+  },
+  mounted() {
+
+  },
+  methods: {
+
+
+  },
 };
 </script>
+
+
+
+
+
+
 <style scoped lang='scss'>
 @import "@/assets/sass/main.scss";
+.scrollable-text {
+  height: 45px;
+  overflow: hidden;
+  background-color: $mred;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
 </style>
